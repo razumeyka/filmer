@@ -16,3 +16,9 @@ body {
   text-decoration: underline;
   margin: 0 0 50px;
 }
+
+@media screen and (max-width: 1279px) {
+	.container {
+    padding: 30px 15px;
+  }
+}

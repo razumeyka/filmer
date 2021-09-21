@@ -3,3 +3,16 @@
     width: 315px;
     padding-right: 20px;
 }
+
+@media screen and (max-width: 1023px) {
+	.col {
+        width: 220px;
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width: 639px) {
+	.col {
+        width: 135px;
+    }
+}
