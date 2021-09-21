@@ -42,7 +42,7 @@ const Cards = (props) => {
         content = films.map( film => {
             return (
                 <Card 
-                    key={`${film.release_date}${film.title}`}
+                    keys={`${film.release_date}${film.title}`}
                     poster={film.poster_path}
                     title={film.title}
                 />
@@ -57,7 +57,6 @@ const Cards = (props) => {
     if ( isPending ) {
         content = <Spinner />;
     }
-
     
     return (
         <div className={classes.items}>

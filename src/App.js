@@ -1,29 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-import Columns from './Components/Columns/Columns';
-import LeftCol from './Components/Columns/LeftCol';
-import RightCol from './Components/Columns/RightCol';
-import Navigation from './Components/Navigation/Navigation';
-import Cards from './Components/Cards/Cards';
+import Films from './Components/Pages/Films';
+import Film from './Components/Pages/Film';
 
 const App = () => {
-  const [genre, setGenre] = useState('');
-
-  const genreHandler = data => {
-    setGenre(data);
-  };
-
   return (
     <div className="container">
       <h1 className="heading">Filmer</h1>
-      <Columns>
-          <LeftCol>
-              <Navigation onChangeGenre={genreHandler} />
-          </LeftCol>
-          <RightCol>
-              <Cards genre={genre}/>
-          </RightCol>
-      </Columns>
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/films" />
+        </Route>
+        <Route path="/films" exact>
+          <Films />
+        </Route>
+        <Route path="/films/:filmId">
+          <Film />
+        </Route>
+      </Switch>
     </div>
   );
 }
